@@ -59,7 +59,7 @@ def gerar_pdf(gabarito_id, disciplina, turma, num_questoes, alternativas, questo
 
     # QR Code
     qr_path = gerar_qr_code(gabarito_id)
-    c.drawImage(qr_path, MARGIN + 450, PAGE_HEIGHT - MARGIN - 35, width=70, height=70)  # Ajustado para ficar ao lado da turma
+    c.drawImage(qr_path, MARGIN + 435, PAGE_HEIGHT - MARGIN - 45, width=80, height=80)  # Ajustado para ficar ao lado da turma
 
     # Questões
     start_y = PAGE_HEIGHT - MARGIN - 60
@@ -88,7 +88,7 @@ def gerar_pdf(gabarito_id, disciplina, turma, num_questoes, alternativas, questo
             start_y = y
         
         questao = f"{i+1:02d}"
-        c.drawString(MARGIN + x_offset, y, f"{questao}: ")
+        c.drawString(MARGIN + x_offset, y, f"{questao}-")
         
         for idx, alt in enumerate(alternativas):
             x = MARGIN + 35 + x_offset + (idx * HORIZONTAL_SPACING)  # AJUSTA ESPAÇAMENTO ENTRE BOLAS E QUESTÕES
@@ -110,8 +110,8 @@ if __name__ == "__main__":
         gabarito_id=id_gabarito,
         disciplina="Matemática",
         turma="3A",
-        num_questoes=96,  # Número total de questões
+        num_questoes=40,  # Número total de questões
         alternativas=["A", "B", "C", "D", "E"],
-        questoes_por_coluna=25,  # Personalização: questões por coluna
+        questoes_por_coluna=10,  # Personalização: questões por coluna
         num_colunas=4  # Personalização: número de colunas
     )
