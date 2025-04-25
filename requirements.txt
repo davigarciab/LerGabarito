@@ -1,0 +1,6 @@
+flask>=2.0.0
+reportlab>=3.6.8
+qrcode>=7.3
+Pillow>=8.4.0
+pyzbar>=0.1.8
+opencv-python-headless>=4.7.0

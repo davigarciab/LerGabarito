@@ -1,0 +1,49 @@
+# Application context and configuration settings
+
+# Database settings
+DATABASE_PATH = "sqlite:///gabarito.db"
+
+# Answer sheet settings
+MAX_QUESTIONS = 100
+VALID_ALTERNATIVES = ['A', 'B', 'C', 'D', 'E']
+ANSWER_SHEET_TITLE = "Answer Sheet Grading System"
+
+# ID Generation settings
+ID_PREFIX = "GAB"
+SUBJECT_CODE_LENGTH = 3
+CLASS_CODE_LENGTH = 2
+
+# PDF Generation settings
+PAGE_SIZE = 'A4'
+MARGIN = 50
+FONT_SIZE = 12
+BUBBLE_SIZE = 15
+SIGNATURE_HEIGHT = 50
+
+# QR Code settings
+QR_VERSION = 1
+QR_ERROR_CORRECTION = 'H'
+QR_BOX_SIZE = 10
+QR_BORDER = 4
+
+# Form fields
+REQUIRED_FIELDS = [
+    'subject_name',    # e.g., Mathematics
+    'class_name',      # e.g., 3ºA
+    'question_count',  # e.g., 10
+    'correct_answers'  # e.g., [A, B, C, D, E, A, B, C, D, E]
+]
+
+# File paths
+TEMPLATE_DIR = 'templates'
+STATIC_DIR = 'static'
+PDF_OUTPUT_DIR = 'output/pdf'
+QR_OUTPUT_DIR = 'output/qr'
+
+# Dependencies
+REQUIRED_PACKAGES = [
+    'reportlab>=3.6.8',
+    'qrcode>=7.3',
+    'Pillow>=8.4.0',
+    'sqlite3'
+]
